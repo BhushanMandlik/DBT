@@ -6,6 +6,21 @@ sources:
     schema: stripe
     tables:
       - name: payment
+        columns:
+          - name: ID
+            description: The ID for each payment.
+          - name: ORDERID
+            description: The ORDERID for order.
+          - name: PAYMENTMETHOD
+            description: The PAYMENTMETHOD used for payment.
+          - name: STATUS
+            description: The STATUS of payment.
+          - name: AMOUNT
+            description: The AMOUNT payed.
+          - name: CREATED
+            description: Payment initiated at.
+          - name: _BATCHED_AT
+            description: Payment _BATCHED_AT
         freshness:
           warn_after: {count: 24, period: hour}
           error_after: {count: 1, period: day}
