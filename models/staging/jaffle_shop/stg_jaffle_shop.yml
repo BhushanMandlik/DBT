@@ -44,7 +44,7 @@ models:
         description: Foreign key to stg_customers.customer_id.
         tests:
           - relationships:
-              to: ref('stg_jaffle_shop__customers')
+              to: ref('stg_customers')
               field: customer_id
       - name: ORDER_DATE
         description: The ORDER_DATE of product.
