@@ -8,16 +8,30 @@ sources:
       - name: customers
         columns:
           - name: id
+            description: The id for customer.
             tests:
               - unique
               - not_null
+          - name: FIRST_NAME
+            description: The FIRST_NAME of customer.
+          - name: LAST_NAME
+            description: The LAST_NAME of customer.
             
       - name: orders
         columns:
           - name: id
+            description: The id of order.
             tests:
               - unique              
               - not_null
+          - name: ORDER_DATE
+            description: The ORDER_DATE for order.
+          - name: STATUS
+            description: The STATUS of order.
+          - name: USER_ID
+            description: The USER_ID associated with order.
+          - name: _ETL_LOADED_AT
+            description: The _ETL_LOADED_AT timestamp for order.
         loaded_at_field: _etl_loaded_at
         freshness:
           warn_after: {count: 12, period: hour}
